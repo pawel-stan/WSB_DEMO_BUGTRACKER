@@ -26,6 +26,7 @@ public class ProjectController {
         ModelAndView modelAndView = new ModelAndView("projects/index");
         modelAndView.addObject("projects", projects);
         modelAndView.addObject("filter", filter);
+        modelAndView.addObject("creators", projectService.findAllCreators());
 
         return modelAndView;
     }

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
+import wsb.bugtrackerexercise.models.Person;
 import wsb.bugtrackerexercise.models.Project;
 
 @Data
@@ -12,6 +13,8 @@ import wsb.bugtrackerexercise.models.Project;
 public class ProjectFilter {
 
     private String name;
+
+    private Person creator;
 
 
     public Specification<Project> buildQuery() {

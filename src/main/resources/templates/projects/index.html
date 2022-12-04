@@ -22,8 +22,20 @@
         </div>
 
         <div class="col">
+            <select th:field="*{creator}"
+                    class="form-control">
+                <option th:value="${null}" th:text="#{projects.creator}"></option>
+                <option th:each="c : ${creators}"
+                        th:value="${c.getId()}"
+                        th:text="${c.getRealName()}"></option>
+            </select>
+        </div>
+
+        <div class="col">
             <button type="submit" th:text="#{common.search}"
                     class="btn btn-primary"></button>
+
+            <a th:href="@{/projects}" th:text="#{common.clear}"></a>
         </div>
     </form>
 
