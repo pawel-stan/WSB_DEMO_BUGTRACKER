@@ -14,7 +14,7 @@ public class ProjectFilter {
 
     private String name;
 
-//    private Person creator;
+    private Person creator;
 
     private String globalSearch;
 
