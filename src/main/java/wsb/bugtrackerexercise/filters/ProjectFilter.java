@@ -14,13 +14,21 @@ public class ProjectFilter {
 
     private String name;
 
-    private Person creator;
+//    private Person creator;
+
+    private String globalSearch;
 
 
     public Specification<Project> buildQuery() {
-        return Specification.allOf(
-                ilike("name", name),
-                equalTo("enabled", true)
+        return Specification.anyOf(
+                ilike("name", globalSearch),
+                ilike("description", globalSearch),
+                ilike("code", globalSearch)
+        ).and(
+                Specification.allOf(
+                        ilike("name", name),
+                        equalTo("enabled", true)
+                )
         );
     }
 

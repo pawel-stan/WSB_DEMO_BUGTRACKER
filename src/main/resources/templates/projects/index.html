@@ -21,7 +21,7 @@
                    th:placeholder="#{projects.name}"/>
         </div>
 
-        <div class="col">
+<!--        <div class="col">
             <select th:field="*{creator}"
                     class="form-control">
                 <option th:value="${null}" th:text="#{projects.creator}"></option>
@@ -29,6 +29,12 @@
                         th:value="${c.getId()}"
                         th:text="${c.getRealName()}"></option>
             </select>
+        </div>-->
+
+        <div class="col">
+            <input th:field="*{globalSearch}"
+                   class="form-control"
+                   th:placeholder="#{common.globalSearch}"/>
         </div>
 
         <div class="col">
