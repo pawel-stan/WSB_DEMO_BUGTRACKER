@@ -13,6 +13,20 @@
 
     <h2 th:text="#{projects.index}"></h2>
 
+    <form th:action="@{/projects}" th:object="${filter}" class="row">
+
+        <div class="col">
+            <input th:field="*{name}"
+                   class="form-control"
+                   th:placeholder="#{projects.name}"/>
+        </div>
+
+        <div class="col">
+            <button type="submit" th:text="#{common.search}"
+                    class="btn btn-primary"></button>
+        </div>
+    </form>
+
     <div th:each="project : ${projects}">
         <div class="card mt-4">
 
