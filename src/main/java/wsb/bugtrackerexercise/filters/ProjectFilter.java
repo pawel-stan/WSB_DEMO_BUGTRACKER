@@ -27,7 +27,8 @@ public class ProjectFilter {
         ).and(
                 Specification.allOf(
                         ilike("name", name),
-                        equalTo("enabled", true)
+                        equalTo("enabled", true),
+                        equalTo("creator", creator)
                 )
         );
     }
